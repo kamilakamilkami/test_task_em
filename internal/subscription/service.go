@@ -1,7 +1,5 @@
 package subscription
 
-import "context"
-
 type Service struct {
 	repo *Repository
 }

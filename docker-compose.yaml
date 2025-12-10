@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16
+    container_name: test_task_em_db
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "0000"
+      POSTGRES_DB: "subscriptions"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_clean:/var/lib/postgresql/data"
+
+  app:
+    build: .
+    container_name: test_task_em_app
+    environment:
+      DB_DSN: "postgres://postgres:0000@db:5432/subscriptions?sslmode=disable"
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+
+volumes:
+  pgdata_clean:
