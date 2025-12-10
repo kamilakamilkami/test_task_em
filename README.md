@@ -43,6 +43,14 @@ service.go → business logic
 
 ---
 
+## 🚀 How to Run the Project
+
+### 1️⃣ Clone the repository  
+```bash
+git clone https://github.com/kamilakamilkami/test_task_em.git
+cd test_task_em
+```
+
 ## 🔧 Environment Variables
 
 Create `.env` file:
@@ -58,13 +66,18 @@ Make sure Docker is installed, then run:
 docker compose up --build
 ```
 
-Services:
+### 4️⃣ Service URLs
 
-API: http://localhost:8080
+| Service      | URL |
+|--------------|-----|
+| API          | http://localhost:8080 |
+| Swagger UI   | http://localhost:8080/swagger/index.html |
+| PostgreSQL   | localhost:5432 |
 
-Swagger: http://localhost:8080/swagger/index.html
-
-Postgres: localhost:5432
+### 5️⃣ Stop the project  
+```bash
+docker compose down -v
+```
 
 ## 📘 Swagger Documentation
 
@@ -127,39 +140,8 @@ go mod download
 go run cmd/app/main.go
 ```
 ## 👩‍💻 Author
-Kamila N.
-Backend Developer (Go)
+### Kamila N.
+#### Backend Developer (Go)
 
 
-## 🚀 How to Run the Project
 
-### 1️⃣ Clone the repository  
-```bash
-git clone https://github.com/kamilakamilkami/test_task_em.git
-cd test_task_em
-```
-
-### 2️⃣ Create a `.env` file  
-```env
-DB_DSN=postgres://postgres:0000@db:5432/subscriptions?sslmode=disable
-```
-
-### 3️⃣ Run with Docker  
-Make sure Docker is installed and running.
-
-```bash
-docker compose up --build
-```
-
-### 4️⃣ Service URLs
-
-| Service      | URL |
-|--------------|-----|
-| API          | http://localhost:8080 |
-| Swagger UI   | http://localhost:8080/swagger/index.html |
-| PostgreSQL   | localhost:5432 |
-
-### 5️⃣ Stop the project  
-```bash
-docker compose down -v
-```
