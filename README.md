@@ -34,7 +34,7 @@ service.go → business logic
 
 | Tech | Description |
 |------|-------------|
-| Go 1.22 | Main language |
+| Go 1.23 | Main language |
 | Gin | HTTP framework |
 | PostgreSQL 16 | Database |
 | Docker | Containerization |
@@ -94,11 +94,11 @@ swag init -g cmd/app/main.go
 | GET    | `/subscriptions/sum`   | Get total spending with filters |
 
 ## 🗄 Database Migration
-# Migrations run automatically on service startup:
+Migrations run automatically on service startup:
 ```
 RunMigrations(db)
 ```
-# Creates table:
+## Creates table:
 ```
 subscriptions (
   id SERIAL PRIMARY KEY,
@@ -126,7 +126,40 @@ subscriptions (
 go mod download
 go run cmd/app/main.go
 ```
-### 👩‍💻 Author
-## Kamila N.
-# Backend Developer (Go)
+## 👩‍💻 Author
+Kamila N.
+Backend Developer (Go)
 
+
+## 🚀 How to Run the Project
+
+### 1️⃣ Clone the repository  
+```bash
+git clone https://github.com/kamilakamilkami/test_task_em.git
+cd test_task_em
+```
+
+### 2️⃣ Create a `.env` file  
+```env
+DB_DSN=postgres://postgres:0000@db:5432/subscriptions?sslmode=disable
+```
+
+### 3️⃣ Run with Docker  
+Make sure Docker is installed and running.
+
+```bash
+docker compose up --build
+```
+
+### 4️⃣ Service URLs
+
+| Service      | URL |
+|--------------|-----|
+| API          | http://localhost:8080 |
+| Swagger UI   | http://localhost:8080/swagger/index.html |
+| PostgreSQL   | localhost:5432 |
+
+### 5️⃣ Stop the project  
+```bash
+docker compose down -v
+```
