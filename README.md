@@ -45,7 +45,7 @@ service.go → business logic
 
 ## 🚀 How to Run the Project
 
-### 1️⃣ Clone the repository  
+### Clone the repository  
 ```bash
 git clone https://github.com/kamilakamilkami/test_task_em.git
 cd test_task_em
@@ -66,7 +66,7 @@ Make sure Docker is installed, then run:
 docker compose up --build
 ```
 
-### 4️⃣ Service URLs
+### Service URLs
 
 | Service      | URL |
 |--------------|-----|
@@ -74,7 +74,7 @@ docker compose up --build
 | Swagger UI   | http://localhost:8080/swagger/index.html |
 | PostgreSQL   | localhost:5432 |
 
-### 5️⃣ Stop the project  
+### Stop the project  
 ```bash
 docker compose down -v
 ```
