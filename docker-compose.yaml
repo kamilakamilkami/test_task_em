@@ -9,7 +9,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - pgdata_clean:/var/lib/postgresql/data"
+      - pgdata_clean:/var/lib/postgresql/data
 
   app:
     build: .
