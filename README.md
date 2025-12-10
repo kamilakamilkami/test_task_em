@@ -56,6 +56,7 @@ Make sure Docker is installed, then run:
 
 ```bash
 docker compose up --build
+```
 
 Services:
 
