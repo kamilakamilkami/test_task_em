@@ -65,3 +65,68 @@ API: http://localhost:8080
 Swagger: http://localhost:8080/swagger/index.html
 
 Postgres: localhost:5432
+
+## 📘 Swagger Documentation
+
+The project automatically generates Swagger docs using swag.
+
+To regenerate docs manually:
+
+```bash
+swag init -g cmd/app/main.go
+```
+
+## Access UI after starting:
+
+➡ http://localhost:8080/swagger/index.html
+
+## 🧩 API Endpoints
+
+### 🔹 Subscriptions
+
+| Method | Endpoint              | Description                   |
+|--------|------------------------|-------------------------------|
+| POST   | `/subscriptions/`      | Create a subscription         |
+| GET    | `/subscriptions/`      | List all subscriptions        |
+| GET    | `/subscriptions/{id}`  | Get subscription by ID        |
+| PUT    | `/subscriptions/{id}`  | Update subscription           |
+| DELETE | `/subscriptions/{id}`  | Delete subscription           |
+| GET    | `/subscriptions/sum`   | Get total spending with filters |
+
+## 🗄 Database Migration
+# Migrations run automatically on service startup:
+```
+RunMigrations(db)
+```
+# Creates table:
+```
+subscriptions (
+  id SERIAL PRIMARY KEY,
+  service_name TEXT,
+  price INTEGER,
+  user_id UUID,
+  start_date DATE,
+  end_date DATE
+)
+```
+
+## 🧪 Example Create Request
+```
+{
+  "service_name": "Netflix",
+  "price": 3500,
+  "user_id": "1b4e28ba-2fa1-11d2-883f-0016d3cca427",
+  "start_date": "01-2024",
+  "end_date": "03-2024"
+}
+```
+
+## ⚙️ Build Without Docker
+```
+go mod download
+go run cmd/app/main.go
+```
+### 👩‍💻 Author
+## Kamila N.
+# Backend Developer (Go)
+
